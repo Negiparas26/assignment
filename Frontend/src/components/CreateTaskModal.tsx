@@ -34,7 +34,7 @@ export default function CreateTaskModal({ isOpen, onClose, onSuccess }: CreateTa
 
     const onSubmit = async (data: TaskFormData) => {
         try {
-            await axios.post('http://localhost:5000/api/tasks', { ...data, status: 'todo' });
+            await axios.post('https://assignment-jlkw.onrender.com/api/tasks', { ...data, status: 'todo' });
             reset();
             onSuccess();
             onClose();

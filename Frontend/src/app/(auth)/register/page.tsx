@@ -28,7 +28,7 @@ export default function RegisterPage() {
 
     const onSubmit = async (data: RegisterFormData) => {
         try {
-            await axios.post('http://localhost:5000/api/auth/register', data);
+            await axios.post('https://assignment-jlkw.onrender.com/api/auth/register', data);
             router.push('/login');
         } catch (err: any) {
             setError(err.response?.data?.error || 'Registration failed');
