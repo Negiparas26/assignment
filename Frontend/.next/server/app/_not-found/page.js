@@ -1,0 +1,13 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_not-found/page.js")
+R.c("server/chunks/ssr/Documents_GitHub_Task-management-System_Frontend_b15a8315._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__a76f3bd4._.js")
+R.c("server/chunks/ssr/cdd9e_next_dist_esm_build_templates_app-page_1962ae02.js")
+R.c("server/chunks/ssr/[root-of-the-server]__f2243790._.js")
+R.c("server/chunks/ssr/cdd9e_next_dist_bbc2887a._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__536debd6._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__49209cbf._.js")
+R.c("server/chunks/ssr/cdd9e_next_dist_client_components_c819ee72._.js")
+R.c("server/chunks/ssr/cdd9e_next_dist_client_components_builtin_forbidden_6b367cf7.js")
+R.c("server/chunks/ssr/a7334_Frontend__next-internal_server_app__not-found_page_actions_2728fbfc.js")
+R.m(9939)
+module.exports=R.m(9939).exports
