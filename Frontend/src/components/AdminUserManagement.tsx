@@ -13,7 +13,7 @@ export default function AdminUserManagement() {
     const fetchUsers = async () => {
         setLoading(true);
         try {
-            const res = await axios.get('https://assignment-jlkw.onrender.com/api/auth/users');
+            const res = await axios.get('http://localhost:5000/api/auth/users');
             setUsers(res.data);
         } catch (err) {
             console.error('Failed to fetch users', err);
@@ -25,7 +25,7 @@ export default function AdminUserManagement() {
     const deleteUser = async (id: number) => {
         if (!confirm('Are you sure you want to delete this user?')) return;
         try {
-            await axios.delete(`https://assignment-jlkw.onrender.com/api/auth/users/${id}`);
+            await axios.delete(`http://localhost:5000/api/auth/users/${id}`);
             setUsers(prev => prev.filter(u => u.userId !== id));
         } catch (err) {
             console.error('Failed to delete user', err);
@@ -34,7 +34,7 @@ export default function AdminUserManagement() {
 
     const updateUserRole = async (id: number, newRole: string) => {
         try {
-            await axios.put(`https://assignment-jlkw.onrender.com/api/auth/users/${id}/role`, { role: newRole });
+            await axios.put(`http://localhost:5000/api/auth/users/${id}/role`, { role: newRole });
             setUsers(prev => prev.map(u => u.userId === id ? { ...u, role: newRole as any } : u));
         } catch (err) {
             console.error('Failed to update role', err);

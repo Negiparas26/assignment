@@ -8,7 +8,7 @@ import { io } from 'socket.io-client';
 import { Task } from '@/types';
 import { motion } from 'framer-motion';
 
-const socket = io('https://assignment-jlkw.onrender.com');
+const socket = io('http://localhost:5000');
 
 interface BoardProps {
     refreshTrigger: number;
@@ -33,7 +33,7 @@ export default function Board({ refreshTrigger }: BoardProps) {
 
     const fetchTasks = async () => {
         try {
-            const res = await axios.get('https://assignment-jlkw.onrender.com/api/tasks?limit=100');
+            const res = await axios.get('http://localhost:5000/api/tasks?limit=100');
             setTasks(res.data.data || []);
         } catch (err) {
             console.error(err);
@@ -76,7 +76,7 @@ export default function Board({ refreshTrigger }: BoardProps) {
         setTasks(newTasks);
 
         try {
-            await axios.put(`https://assignment-jlkw.onrender.com/api/tasks/${draggableId}`, { status: newStatus });
+            await axios.put(`http://localhost:5000/api/tasks/${draggableId}`, { status: newStatus });
         } catch (err) {
             console.error('Failed to update task status', err);
             fetchTasks();
@@ -86,7 +86,7 @@ export default function Board({ refreshTrigger }: BoardProps) {
     const handleDelete = async (id: number) => {
         if (!confirm('Delete this task?')) return;
         try {
-            await axios.delete(`https://assignment-jlkw.onrender.com/api/tasks/${id}`);
+            await axios.delete(`http://localhost:5000/api/tasks/${id}`);
         } catch (err) {
             console.error(err);
         }
