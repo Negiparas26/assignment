@@ -26,7 +26,7 @@ export default function LoginPage() {
 
     const onSubmit = async (data: LoginFormData) => {
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/login', data);
+            const response = await axios.post('https://assignment-jlkw.onrender.com/api/auth/login', data);
             login(response.data.token, {
                 userId: response.data.userId,
                 username: response.data.username,
